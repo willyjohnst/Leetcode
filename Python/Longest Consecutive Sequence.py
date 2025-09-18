@@ -13,6 +13,3 @@ class Solution:
                     max_count = curr_count
                 curr_count = 0
         return max_count
-
-
-print(Solution.longestConsecutive(Solution, [1,0,1,2]))

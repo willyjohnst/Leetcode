@@ -363,3 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 /Sum of two integers.pyproj
 /Sum of two integers.sln
+/Leetcode C++/Leetcode C++.cpp
+/Leetcode C++/Leetcode C++.vcxproj.filters
+/Leetcode C++/Leetcode C++.vcxproj

@@ -13,5 +13,3 @@ class Solution:
         if (a > boundary):
             return ~(a ^ mask)
         return a
-
-print(Solution.getSum(Solution, 15, -4))
