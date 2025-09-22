@@ -5,6 +5,7 @@ class Solution
 {
 public:
 	int checkAnswer(int a, int b) { return(getSum(a, b)); };
+private:
 	int getSum(int a, int b);
 };
 #endif
