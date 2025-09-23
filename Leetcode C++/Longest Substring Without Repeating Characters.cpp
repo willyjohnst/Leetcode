@@ -14,14 +14,11 @@ int Solution::lengthOfLongestSubstring(string s) {
 	int right = 0;
 	int maxLength = 0;
 	unordered_set<char> chars;
-	while (right != s.size() - 1) { // not at the end of the list
+	while (right != s.size()) { // not at the end of the list
 		if (chars.count(s.at(right)) == 0) {
 			chars.insert(s.at(right));
 			right++;
-			int length = right - left;
-			if (length > maxLength) {
-				maxLength = length;
-			}
+			maxLength = max(maxLength, right - left);
 		}
 		else {
 			chars.erase(s.at(left));
