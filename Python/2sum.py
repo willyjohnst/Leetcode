@@ -5,17 +5,13 @@ You may assume that each input would have exactly one solution, and you may not 
 
 You can return the answer in any order."""
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
-        ldict = {}
-        for index, value in enumerate(nums):
-            if (ldict.__contains__(value)):
-                ldict[value].append(index)
-            else:
-                ldict[value] = [value]
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        nums_dict = {}
+        for index, item in enumerate(nums):
+            nums_dict.update({item:index})
 
-        for curr in nums:
-            difference = target - curr;
-            # either target is different to difference or there are multiple targets in the list
-            if (curr != difference or len(ldict.get(difference)) > 1):
-                if (difference in ldict):
-                    return([curr, difference])
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in nums_dict:
+                if nums_dict[diff] != i:
+                    return [nums_dict.get(diff), i]
