@@ -1,0 +1,48 @@
+virtual box - oracle virtual machine
+open source?
+
+Two Sum:
+Given an array of integers nums and an integer target,
+return indices of the two numbers such that they add up to target
+
+Thinking:
+Unoptimized code: just do O(N^2)
+
+Optimized plan:
+- Create a dict of each item in the list
+- go through each list once
+
+
+Linked List Cycle
+Given a head node, the head of a linked list
+Find if there is a cycle in the linked list
+
+So I need to keep track of every element in the list?
+Start at head->next->next->...
+
+I think the best way to do this would be to start at node n
+treat n as the start of a cycle
+then treat every element after n as part of the cycle 
+then if we find a portion that fully repeats twice theres a loop
+eg:
+1 2 3 4 5
+1 2 3 4 5 6 7 8 9
+Ok better way, keep track of each element and what comes after
+
+So 2 data structures:
+1 for going through it the first time, add the element to it
+1 for checking for a loop
+if we get a repeat number then we call the check loop
+takes the dict, key = node.val, value = node.next
+then we go through the linked list, checking if 
+
+
+
+Merge Two Lists
+You are given the heads of two sorted linked lists list1 and list2.
+Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+Return the head of the merged linked list.
+
+So start with list1 and list2 as pointer to the start of each list. 
+Start pointer will be a pointer called start, which will be set to the smallest of list1 and list2
+Then whichever is smallest of the following: list1, list2 is appended to start and we move on
