@@ -63,3 +63,17 @@ I think this can be built recursivly => start with 1 step = 1 option, 2 steps = 
 
 # at each stair can be 1 or 2, so we just recursivly try both, and if it doesn't work then return 0, if it does then return 1.
 # They have to be different because we are choosing a different path higher up
+
+Reverse Linked List
+Do we use a dummy head or a tmp node or both?
+
+So thinking so far:
+Get node n
+if not n: # has to be end 
+	break
+set head to n.next
+set n.next to dummy.next
+set dummy.next to n.next
+
+repeat this in a while loop until not head then break
+return dummy.next
