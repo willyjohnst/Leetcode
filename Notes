@@ -44,3 +44,22 @@ Return the head of the merged linked list.
 So start with list1 and list2 as pointer to the start of each list. 
 Start pointer will be a pointer called start, which will be set to the smallest of list1 and list2
 Then whichever is smallest of the following: list1, list2 is appended to start and we move on
+
+Climbing Stairs
+You are climbing a staircase. It takes n steps to reach the top.
+
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+Easy answer:
+Brute force every possible branch:
+	Try all 1's, then try adding in 2's going back each step, like a binary tree
+	Eg: for 5
+	1 -> 2 -> 3 -> 4 -> 5 is the left-most path
+	then try 4 -> 6, no
+	try 3 -> 5 yes, 
+	then try 2 -> 4
+	
+I think this can be built recursivly => start with 1 step = 1 option, 2 steps = 2 options, 3 steps = 1 step -> 2 steps or 2 steps -> 1 step == 1 + 2  +  2 + 1 = 6, then same for 4
+
+# at each stair can be 1 or 2, so we just recursivly try both, and if it doesn't work then return 0, if it does then return 1.
+# They have to be different because we are choosing a different path higher up
