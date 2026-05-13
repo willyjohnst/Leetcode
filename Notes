@@ -36,8 +36,6 @@ if we get a repeat number then we call the check loop
 takes the dict, key = node.val, value = node.next
 then we go through the linked list, checking if 
 
-
-
 Merge Two Lists
 You are given the heads of two sorted linked lists list1 and list2.
 Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
