@@ -1,32 +1,15 @@
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution(object):
-    def invertTree(self, root):
+    def containsDuplicate(self, nums):
         """
-        :type root: Optional[TreeNode]
-        :rtype: Optional[TreeNode]
+        :type nums: List[int]
+        :rtype: bool
         """
-        if root:
-            tmp = root.left
-            root.left = root.right
-            root.right = tmp
-            self.invertTree(root.left)
-            self.invertTree(root.right)
-        return root
-    # code is good, but c++ ish (makes sense, c++ at heat)
-    # below is pythonic one-liner
+        listSet = set()
+        for num in nums:
+            if num in listSet:
+                return True
+            listSet.add(num)
+        return False
 
-    def invertTreePythonic(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: Optional[TreeNode]
-        """
-        if not root:
-            return None
-
-        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)        
-        return root
+    def containsDuplicatePythonic(self, nums):
+        return len(set(nums)) != len(nums)
