@@ -36,10 +36,10 @@ class Solution(object):
         char_set = set()
         for char in s:
             while char in char_set:
-                char_set.remove(s[left_ptr])
+                char_set.remove(char)
                 left_ptr +=1
 
-            char_set.add(s[right_ptr])
+            char_set.add(char)
             
             length = max(length, len(char_set))
 
@@ -55,9 +55,9 @@ class Solution(object):
         left_ptr = 0
         for index, char in enumerate(s):
             if char in char_dict and char_dict[char] >= left_ptr:
-                left_ptr = index
+                left_ptr = char_dict[char] + 1
 
             char_dict.update({char:index})
-            length = max(length, index - left_ptr)
+            length = max(length, index - left_ptr + 1)
 
         return length
